@@ -21,7 +21,9 @@ void add(metro* l, int numeracao, char passageiro) {
     if(l->tamanho != 0) {
         v0->prox = l->inicio;
         v0->anterior = l->final;
+        l->inicio->anterior = v0;
         l->inicio = v0;
+        l->final->prox = v0;
     }
     else {
         v0->prox = v0;
@@ -41,6 +43,7 @@ void addfinal(metro* l, int numeracao, char passageiro) {
         v0->anterior = l->final;
         l->final = v0;
         l->final->prox = l->inicio;
+        l->inicio->anterior = v0;
     }
     else {
         l->inicio = v0;
@@ -52,15 +55,22 @@ void addfinal(metro* l, int numeracao, char passageiro) {
 }
 
 void remover(metro* l, int numeracao) {
-    if(l->tamanho != 0) {
+    if(l->tamanho == 1) {
+            l->inicio = NULL;
+            l->final = NULL;
+            l->tamanho--;
+            free(l->inicio);
+    }
+    else if(l->tamanho > 1){
         vagao* atual = l->inicio;
-        int contador = 0;
-        while(contador != numeracao) {
+        while(atual->numeracao != numeracao) {
             atual = atual->prox;
-            contador++;
         }
+        printf("atual numeracao = %d e atual passageiro = %c\n", atual->numeracao, atual->passageiro);
         atual->anterior->prox = atual->prox;
+        printf("atual->anterior->prox->passageiro = %c\n", atual->anterior->prox->passageiro);
         atual->prox->anterior = atual->anterior;
+        printf("atual->prox->anterior->passageiro = %c\n", atual->prox->anterior->passageiro);
         l->tamanho--;
         free(atual);
     }
@@ -83,9 +93,10 @@ int main() {
     m0->final = NULL;
     add(m0, 0, 'a');
     add(m0, 1, 'b');
-    printar(m0);
+    //printar(m0);
     add(m0, 2, 'c');
     addfinal(m0, 3, 'd');
     add(m0, 4, 'e');
     remover(m0, 2);
+    printar(m0);
 }
