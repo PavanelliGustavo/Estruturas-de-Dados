@@ -1,0 +1,11 @@
+Fila é um Estrutura de Dados semelhante à lista, diferenciando-se em duas restrições: elementos só podem ser inseridos no final da estrutura e removidos apenas no início.
+Portanto, sua principal característicae preservar sua ordem de entrada.
+
+Tipo abstrato de dados na fila:
+
+queue(): cria uma nova fila que está vazia
+enqueue(fila, item): insere um novo item no final da fila
+dequeue(fila): remove o item no início da fila
+front(fila): retorna o item do início da fila, sem removê-lo
+isEmpty(fila): teste para ver se a fila está vazia
+size(fila): retorna o número de itens na fila
