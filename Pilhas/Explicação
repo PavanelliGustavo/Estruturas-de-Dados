@@ -1,6 +1,0 @@
-stack(): cria uma nova pilha vazia
-push(item): insere um novo item na pilha
-pop(): remove o item que está no topo da pilha
-peek(): retorna o item no topo mas não o remove da pilha
-isEmpty(): testa se a pilha está vazia
-size(): retorna o número de itens na pilha
