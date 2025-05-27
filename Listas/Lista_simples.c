@@ -13,6 +13,25 @@ typedef struct lista{
     int tamanho;
 } lista;
 
+void criar(char nome) {
+    typedef struct NO2{
+        int numeracao;
+        struct NO2* prox;
+        struct NO2* anterior;
+    } NO2;
+
+    typedef struct lista2{
+        NO2* inicio;
+        NO2* final;
+        int tamanho;
+    } lista2;
+
+    lista2* m0 = malloc(sizeof(lista2));
+    n0->tamanho = 0;
+    n0->inicio = NULL;
+    n0->final = NULL;
+}
+
 void add(lista* l, int numeracao) {
     NO* v0 = malloc(sizeof(NO));
     v0->numeracao = numeracao;
@@ -70,6 +89,10 @@ void printar(lista* l) {
         atual = atual->prox;
         contador++;
     }
+}
+
+void tamanho(lista* l) {
+    printf("%d\n", l->tamanho);
 }
 
 int main() {
