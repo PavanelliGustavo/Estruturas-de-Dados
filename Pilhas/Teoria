@@ -3,7 +3,7 @@ Uma pilha (stack) é uma estrutura para armazenar um conjunto de elementos que f
 - O único elemento que pode ser retirado da pilha é o elemento do topo
 Serve para modelar situações em que é preciso "guardar para mais tarde" vários elementos e "lembrar" sempre do último elemento armazenado
 
-Tipo abstrato de dados da pilha:
+Tipo abstrato de dados na pilha:
 
 stack(): cria uma nova pilha vazia
 push(item): insere um novo item na pilha
