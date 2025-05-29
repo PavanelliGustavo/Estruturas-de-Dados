@@ -66,11 +66,8 @@ void remover(metro* l, int numeracao) {
         while(atual->numeracao != numeracao) {
             atual = atual->prox;
         }
-        printf("atual numeracao = %d e atual passageiro = %c\n", atual->numeracao, atual->passageiro);
         atual->anterior->prox = atual->prox;
-        printf("atual->anterior->prox->passageiro = %c\n", atual->anterior->prox->passageiro);
         atual->prox->anterior = atual->anterior;
-        printf("atual->prox->anterior->passageiro = %c\n", atual->prox->anterior->passageiro);
         l->tamanho--;
         free(atual);
     }
