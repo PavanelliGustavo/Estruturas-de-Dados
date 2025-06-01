@@ -36,7 +36,7 @@ void enqueue(lista* l, int numeracao) {
     l->tamanho++;
 }
 
-void dequeue(lista* l, int numeracao) {
+void dequeue(lista* l) {
     if(l->tamanho == 1) {
             l->inicio = NULL;
             l->final = NULL;
