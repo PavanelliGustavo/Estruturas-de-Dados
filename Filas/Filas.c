@@ -40,14 +40,13 @@ void dequeue(lista* l) {
     if(l->tamanho == 1) {
             l->inicio = NULL;
             l->final = NULL;
-            l->tamanho--;
             free(l->inicio);
     }
     else if(l->tamanho > 1){
         l->inicio = l->inicio->prox;
-        l->tamanho--;
         free(l->inicio->anterior);
     }
+    l->tamanho--;
 }
 
 void printar(lista* l) {
