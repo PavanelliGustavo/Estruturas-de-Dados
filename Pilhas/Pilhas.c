@@ -64,12 +64,12 @@ void peek(lista* l) {
     printf("%d\n", l->inicio);
 }
 
-void tamanho(lista* l) {
+void size(lista* l) {
     printf("%d\n", l->tamanho);
 }
 
 void isEmpty(lista* l) {
-    return l->tamanho==0;
+    return l->tamanho == 0;
 }
 
 int main() {
